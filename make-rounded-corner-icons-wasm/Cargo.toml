@@ -1,0 +1,20 @@
+[package]
+edition = "2021"
+license = "MIT"
+name = "wasm_rounded_icon"
+version = "0.1.0"
+
+[dependencies]
+console_error_panic_hook = {version = "0.1.7", optional = true}
+image = "0.25.2"
+imageproc = "0.25.0"
+wasm-bindgen = "0.2.92"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["console_error_panic_hook"]
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
